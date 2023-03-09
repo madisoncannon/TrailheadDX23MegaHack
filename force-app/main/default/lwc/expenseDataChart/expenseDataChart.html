@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="LibsChartjs" icon-name="custom:custom19">
+        <div class="chart slds-var-m-around_medium" lwc:dom="manual"></div>
+        <template lwc:if={error}>
+            {error}
+        </template>
+    </lightning-card>
+
+<template if:false={disableButton}>
+    <lightning-button label="Save as Image" title="Save As Image" onclick={handleSaveAsImage} class="slds-m-left_x-small"></lightning-button>
+</template>
+<template if:true={disableButton}>
+    <lightning-input type="checkbox" label="Send To Slack" name="doSendToSlack" value={doSendToSlack} onclick={handleOnclickSendToSlack} class="slds-p-around_small"></lightning-input>
+    <lightning-button disabled label="Save as Image" title="Save As Image" onclick={handleSaveAsImage} class="slds-m-left_x-small slds-p-around_small"></lightning-button>
+</template>
+</template>
